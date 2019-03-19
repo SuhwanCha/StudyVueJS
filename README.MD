@@ -4,6 +4,22 @@
 
 - [VueJS Homepage](https://vuejs.org)
 
+I will read `vue.js` guide document and summarize what I need with my opinion.
+
+## My background
+
+- PHP: 3yrs+
+- node.js: X
+- MySQL: 3yrs+
+- HTML, CSS, JS : 3.5yrs+
+- Python: 1yrs+
+
+## Goal of Study
+
+- proficient at vue.js
+- Understanding of front-end javascript framework
+- experiencing rule-based source
+
 # Set up environment
 
 macOS 10.14.3  
