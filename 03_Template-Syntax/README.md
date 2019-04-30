@@ -66,3 +66,38 @@ Directive attrivute values are **single JavaScript expression**
 
 ## Arguments
 
+Some directives can take an “argument." For example, `v-bind` is used to reactively update an HTML attribute.
+
+```html
+<a v-bind:href="url"> ... </a>
+```
+
+Another example: `v-on` listens event.
+
+```html
+<a v-on:click="doSomething"> ... </a>
+```
+
+## Dynamic Arguments
+
+> New in 2.6.0+
+
+```html
+<a v-bind:[attributeName]="url"> ... </a>
+```
+
+Possible to use a JavaScript expression in a directive argument by wrapping it with square brackets
+
+```html
+<a v-on:[eventName]="doSomething"> ... </a>
+```
+
+Similarly, when `eventName`‘s value is `"focus"`, for example, `v-on:[eventName]` will be equivalent to `v-on:focus`.
+
+## Modifiers
+
+```html
+<form v-on:submit.prevent="onSubmit"> ... </form>
+```
+
+`v-on` and `v-model`
