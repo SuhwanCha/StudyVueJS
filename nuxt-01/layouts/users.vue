@@ -1,5 +1,6 @@
 <template>
   <div>
+      <Header />
       <header>
           USER SECTION
       </header>
@@ -10,3 +11,12 @@
 <style>
 
 </style>
+
+<script>
+import Header from '~/components/Header.vue'
+export default {
+  components:{
+    Header
+  }
+}
+</script>
