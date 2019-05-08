@@ -11,41 +11,15 @@
 import PostList from "@/components/Posts/PostList";
 
 export default {
-
   components: {
     PostList: PostList
   },
-  asyncData(context, callback) {
-    console.log(context);
-
-    setTimeout(() => {
-      callback(null, {
-        loadedPosts: [
-          {
-            id: "1",
-            title: "First Post",
-            previewText: "This is our first  post!",
-            thumbnail:
-              "https://static.techspot.com/images2/news/bigimage/2018/07/2018-07-10-image-35.jpg"
-          },
-          {
-            id: "2",
-            title: "Second Post",
-            previewText: "This is our first  post!",
-            thumbnail:
-              "https://static.techspot.com/images2/news/bigimage/2018/07/2018-07-10-image-35.jpg"
-          },
-          {
-            id: "3",
-            title: "Third Post",
-            previewText: "This is our first  post!",
-            thumbnail:
-              "https://static.techspot.com/images2/news/bigimage/2018/07/2018-07-10-image-35.jpg"
-          }
-        ]
-      });
-    }, 500);
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    }
   },
+
   // data() {
   //   return {
   //     loadedPosts: []

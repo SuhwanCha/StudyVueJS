@@ -18,23 +18,21 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  async asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: "1",
-          title: "First Post (ID : " + context.route.params.id + ")",
-          previewText: "This is our first  post!",
-          author: "Suhwan Cha",
-          updatedData: new Date(),
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-          thumbnail:
-            "https://static.techspot.com/images2/news/bigimage/2018/07/2018-07-10-image-35.jpg"
+  async asyncData(context) {
+    return axios
+      .get(
+        "https://nuxt-blog-b6948.firebaseio.com/posts/" +
+          context.params.id +
+          ".json"
+      )
+      .then(res => {
+        return{
+          loadedPost: res.data
         }
-      });
-    }, 500);
+      })
+      .catch(e => context.error(e));
   }
 };
 </script>

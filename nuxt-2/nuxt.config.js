@@ -50,5 +50,10 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  axios: {
+    baseURL: 'https://api.github.com',
+    proxyHeaders: false,
+    credentials: false
   }
 };
