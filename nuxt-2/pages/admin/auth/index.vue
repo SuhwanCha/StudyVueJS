@@ -1,7 +1,7 @@
 <template>
   <div class="admin-auth-page">
     <div class="auth-container">
-      <form>
+      <form @submit.prevent="onSubmit">
         <AppControlInput type="email">E-Mail Address</AppControlInput>
         <AppControlInput type="password">Password</AppControlInput>
         <AppButton type="submit">{{ isLogin ? 'Login' : 'Sign Up' }}</AppButton>
@@ -9,7 +9,8 @@
           type="button"
           btn-style="inverted"
           style="margin-left: 10px"
-          @click="isLogin = !isLogin">Switch to {{ isLogin ? 'Signup' : 'Login' }}</AppButton>
+          @click="isLogin = !isLogin"
+        >Switch to {{ isLogin ? 'Signup' : 'Login' }}</AppButton>
       </form>
     </div>
   </div>
@@ -30,6 +31,10 @@ export default {
     return {
       isLogin: true
     }
+  }
+},method{
+  onSubmit(){
+    this.$axios.$post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=[API_KEY]')
   }
 }
 </script>
