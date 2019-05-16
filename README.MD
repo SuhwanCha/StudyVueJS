@@ -1,6 +1,6 @@
 # About Study
 
-> study priod : Mar 2 ~
+> study priod : Mar. 2 ~ May 1
 
 - [VueJS Homepage](https://vuejs.org)
 
